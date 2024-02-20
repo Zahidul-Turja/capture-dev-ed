@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import { MovieState } from "../movieState";
+import { pageAnimation } from "../animation";
 
 function MovieDetail() {
   const location = useLocation();
@@ -19,7 +21,12 @@ function MovieDetail() {
   return (
     <>
       {movie && (
-        <Details>
+        <Details
+          exit="exit"
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+        >
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="poster" />
@@ -42,7 +49,7 @@ function MovieDetail() {
   );
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 
