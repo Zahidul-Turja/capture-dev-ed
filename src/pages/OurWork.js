@@ -13,7 +13,6 @@ import {
   slider,
   sliderContainer,
   scrollReveal,
-  swoopAdoop,
 } from "../animation";
 import { useScroll } from "../components/useScroll";
 import ScrollTop from "../components/ScrollTop";
@@ -83,6 +82,10 @@ const Work = styled(motion.div)`
 
   h2 {
     padding: 1rem 0rem;
+  }
+
+  @media (max-width: 1300px) {
+    padding: 2rem;
   }
 `;
 
